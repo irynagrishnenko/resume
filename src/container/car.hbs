@@ -1,0 +1,228 @@
+<div>
+  <section>
+    <h1>{{make}}
+      {{model}}
+      <date>{{year}}</date>
+      {{color}}</h1>
+    <hr />
+    {{#with features}}
+      {{#with interior}}
+        <p>
+          <h5>Interior
+            <span
+              class='badge bg-secondary'
+            >Seats</span></h5>
+          {{#with seats}}
+            {{color}}
+            {{material}}
+            seats. Which have
+            {{#if heated}}heating{{/if}}
+            {{#if ventilated}}
+              and ventilation.
+            {{/if}}
+          {{/with}}
+        </p>
+        <p>
+          <h5>Interior
+            <span
+              class='badge bg-secondary'
+            >Dashboard</span></h5>
+          {{#with dashboard}}
+            {{material}}
+            {{color}}
+            dashboard with modern
+            {{#with display}}
+              {{type}}
+              display size
+              {{size}}
+              and resolution
+              {{resolution}}
+              {{#if touchscreen}}
+                touchscreen: yes.
+              {{/if}}
+            {{/with}}
+          {{/with}}
+        </p>
+        <p>
+          <h5>Interior
+            <span
+              class='badge bg-secondary'
+            >Audio</span></h5>
+          {{#with audio}}
+            {{system}}
+            with
+            {{speakers}}
+            speakers,
+            {{#if subwoofer}}
+              subwoofer: yes,
+            {{/if}}
+            {{#if bluetooth}}
+              bluetooth: yes,
+            {{/if}}
+            {{#if USB}}
+              USB: yes,
+            {{/if}}
+          {{/with}}
+        </p>
+      {{/with}}
+      <hr />
+      <div>
+        {{#with exterior}}
+          <p>
+            <h5>Exterior
+              <span
+                class='badge bg-primary'
+              >Wheels</span></h5>
+            {{#with wheels}}
+              {{color}}
+              {{type}}
+              {{size}}
+              size - the best wheels for your car!
+            {{/with}}
+          </p>
+          <p>
+            <h5>Exterior
+              <span
+                class='badge bg-primary'
+              >Headlights</span></h5>
+            {{#with headlights}}
+              {{type}}
+              headlights with
+              {{brightness}}
+              brightness are
+              {{#if automatic}}
+                always on!
+              {{/if}}
+            {{/with}}
+          </p>
+          <p>
+            <h5>Exterior
+              <span
+                class='badge bg-primary'
+              >Sunroof</span></h5>
+            {{#with sunroof}}
+              {{size}}
+              {{type}}
+              roof is
+              {{#if automatic}}
+                always on!
+              {{/if}}
+            {{/with}}
+          </p>
+        {{/with}}
+      </div>
+      <hr />
+      <div>
+        <h5>Main
+          <span class='badge bg-success'>Safety</span></h5>
+        {{#with safety}}
+          {{#with airbags}}
+            In Camry 8 airbags:
+            {{front}}
+            front,
+            {{side}}
+            side,
+            {{knee}}
+            knee,
+            {{rear}}
+            rear.
+          {{/with}}
+          <br />
+          Camry assistance:
+          {{#with assistance}}
+            <ul>
+              <li>
+                {{#if blind_spot_monitoring}}
+                  blind_spot_monitoring: yes
+                {{/if}}
+              </li>
+              <li>
+                {{#if rear_cross_traffic_alert}}
+                  rear_cross_traffic_alert: yes
+                {{/if}}
+              </li>
+              <li>
+                {{#if lane_departure_warning}}
+                  lane_departure_warning: yes
+                {{/if}}
+              </li>
+              <li>
+                {{#if adaptive_cruise_control}}
+                  adaptive_cruise_control: yes
+                {{/if}}
+              </li>
+              <li>
+                {{#if collision_warning}}
+                  collision_warning: yes
+                {{/if}}
+              </li>
+            </ul>
+          {{/with}}
+        {{/with}}
+      </div>
+    {{/with}}
+  </section>
+  <section>
+    <div>
+      <h5>Engine
+        <span
+          class='badge bg-success'
+        >Information</span></h5>
+      {{#with engine}}
+        {{type}}
+        {{displacement}}
+        engine with
+        {{horsepower}}
+        horsepower and
+        {{torque}}
+        torque. Work with
+        {{#with transmission}}
+          {{gears}}
+          gears
+          {{type}}
+          transmission.
+        {{/with}}
+      {{/with}}
+    </div>
+    <br />
+    <div>
+      <p>
+        <h5>Fuel
+          <span
+            class='badge bg-success'
+          >Information</span></h5>
+        {{#with fuel_economy}}
+          Fuel consumption in this car about
+          {{city}}l in city,
+          {{highway}}l on highway and
+          {{combined}}l combined.
+        {{/with}}
+      </p>
+    </div>
+  </section>
+  <section>
+    <p>
+      <h5>Price
+        <span
+          class='badge bg-success'
+        >Information</span></h5>
+      Base price for Toyota Camry is only
+      {{#with price}}
+        {{base}}$. But you are must pay destination
+        {{destination}}$ too. Also we have additional
+        options:
+        {{#with options}}
+          <ul>
+            <li>navigation - {{navigation}}$</li>
+            <li>moonroof - {{moonroof}}$</li>
+            <li>premium_paint - {{premium_paint}}$</li>
+          </ul>
+        {{/with}}
+        In conclusion, we can say that the total price for
+        <b>Toyota Camry</b>
+        is only
+        <b>{{total}}$.</b>
+      {{/with}}
+    </p>
+  </section>
+</div>
