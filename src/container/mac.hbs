@@ -1,0 +1,127 @@
+<div>
+  <main>
+    <p>
+      <h1>{{name}}</h1>
+      {{description}}
+      for only
+      <em>{{price}}.</em>
+      It is in category
+      {{category}}.
+    </p>
+    <hr />
+    <div>
+      <h2>Features</h2>
+      {{#with features}}
+        <p>
+          <span
+            class='badge text-bg-primary'
+          >Processor</span>
+          {{#with processor}}
+            {{brand}}
+            {{model}},
+            {{speed}},
+            {{cores}}
+            cores,
+            {{cache}}.
+          {{/with}}
+        </p>
+        <p>
+          <span class='badge text-bg-primary'>Memory</span>
+          {{#with memory}}
+            {{type}},
+            {{size}},
+            {{speed}}.
+          {{/with}}
+        </p>
+        <p>
+          <span class='badge text-bg-primary'>Storage</span>
+          {{#with storage}}
+            {{type}},
+            {{size}}.
+          {{/with}}
+        </p>
+        <p>
+          <span class='badge text-bg-primary'>Display</span>
+          {{#with display}}
+            {{size}},
+            {{resolution}},
+            {{technology}},
+            {{color_space}},
+            {{brightness}},
+            {{refresh_rate}}.
+          {{/with}}
+        </p>
+        <p>
+          <span
+            class='badge text-bg-primary'
+          >Graphics</span>
+          {{#with graphics}}
+            {{brand}},
+            {{model}},
+            {{memory}}.
+          {{/with}}
+        </p>
+        <p>
+          <span class='badge text-bg-primary'>Ports</span>
+          <ol>
+            {{#each ports}}
+              <li>
+                <b>{{type}}</b>
+                {{count}}
+                count.
+                {{#if features}}
+                  It has 4 features:
+                  <ol>
+                    {{#each features}}
+                      <li>{{this}}</li>
+                    {{/each}}
+                  </ol>
+                {{/if}}
+              </li>
+            {{/each}}
+          </ol>
+        </p>
+        <p>
+          <span class='badge text-bg-primary'>Battery</span>
+          {{#with battery}}
+            {{type}},
+            {{capacity}}. This laptop can work
+            {{life}}.
+          {{/with}}
+        </p>
+        <p>
+          <span class='badge text-bg-primary'>Weight</span>
+          {{weight}}.
+        </p>
+        <p>
+          <span
+            class='badge text-bg-primary'
+          >Dimensions</span>
+          {{#with dimensions}}
+            height:
+            {{height}}, width:
+            {{width}}, depth:
+            {{depth}}.
+          {{/with}}
+        </p>
+        <p>
+          <span class='badge text-bg-primary'>Operating
+            system</span>
+          {{operating_system}}.
+        </p>
+        <p>
+          <span
+            class='badge text-bg-primary'
+          >Accessories</span>
+          <ul>
+            {{#each accessories}}
+              <li>{{name}}
+                -
+                {{price}}</li>
+            {{/each}}
+          </ul>
+        </p>
+      {{/with}}
+    </div>
+  </main>
+</div>
