@@ -1,0 +1,84 @@
+<div>
+  <main>
+    <section>
+      <h1>{{name}}</h1>
+      <dfn>{{description}}</dfn>
+      <br />
+      {{#with history}}
+        Found by
+        <strong>{{founder}}</strong>
+        in
+        {{year}}.
+      {{/with}}
+    </section>
+    <hr />
+    <section>
+      <h4><span
+          class='badge text-bg-primary'
+        >Types</span></h4>
+      <ul>
+        {{#each types}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </section>
+    <section>
+      <h4><span
+          class='badge text-bg-primary'
+        >Syntax</span></h4>
+      {{#with syntax}}
+        <ul>
+          <li>variables: <var>{{variables}}</var>;</li>
+          <li>functions: {{functions}};</li>
+          <li>conditionals: {{conditionals}};</li>
+          <li>loops: {{loops}};</li>
+          <li>classes:
+            {{classes}}.
+          </li>
+        </ul>
+      {{/with}}
+    </section>
+    <section>
+      <h4><span
+          class='badge text-bg-primary'
+        >Features</span></h4>
+      <ul>
+        {{#each features}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </section>
+    <section>
+      <h4><span
+          class='badge text-bg-primary'
+        >Libraries</span></h4>
+      <ul>
+        {{#each libraries}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </section>
+    <section>
+      <h4><span
+          class='badge text-bg-primary'
+        >Tools</span></h4>
+      <ul>
+        {{#each tools}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </section>
+    <section>
+      <h4><span
+          class='badge text-bg-primary'
+        >Community</span></h4>
+      <ul>
+        {{#each community}}
+          <li>{{name}}
+            ({{type}})
+          </li>
+        {{/each}}
+      </ul>
+    </section>
+  </main>
+</div>
