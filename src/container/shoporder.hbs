@@ -1,0 +1,47 @@
+<main class="p-4">
+  <div class="card mb-5">
+    <ul class='nav nav-tabs'>
+      {{#each navigation.links}}
+        <li><a href='{{href}}' class='nav-link {{#unless href}} disabled {{/unless}}'>{{text}}</a></li>
+      {{/each}}
+    </ul>
+  </div>
+  <section>
+    <div class="row">
+      <h1 class="mb-5">{{header}}</h1>
+      <div class="col-8">
+        {{#with contacts_data}}
+          <h2>{{title}}<h2>
+            {{#each buttons}}
+              <button class='btn {{#if isPrimary}} btn-warning {{/if}} {{#if isOutline}} btn-outline-warning {{/if}}'>{{text}}</button>
+            {{/each}}
+          <div class="row">
+            {{#with form.input}}
+              <div class="col-4">
+                {{#with surname}}
+                  {{> form}}
+                {{/with}}
+              </div>
+              <div class="col-4">
+                {{#with name}}
+                  {{> form}}
+                {{/with}}
+              </div>
+              <div class="col-4">
+                {{#with phone}}
+                  {{> form}}
+                {{/with}}
+              </div>
+              <div class="col-4">
+                {{#with email}}
+                  {{> form}}
+                {{/with}}
+              </div>
+            {{/with}}
+          </div>
+        {{/with}}
+      </div>
+      <hr class="m-3">
+    </div>
+  </section>
+</main>
