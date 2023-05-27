@@ -59,13 +59,13 @@
               {{/each}}
             </div>
           </div>
-          <div class='col-8'>
-            <div class='form-check mt-3'>
-              {{#each delivery_type}}
+          <div class='form-check mt-3'>
+            {{#each delivery_type}}
+              <div>
                 <label class='form-check-label'>{{type}}</label>
                 <input type='radio' class='form-check-input' {{#if @first}} checked {{/if}} />
-              {{/each}}
-            </div>
+              </div>
+            {{/each}}
           </div>
           <hr class='mt-4 mb-4'>
           {{#with payment}}
@@ -142,16 +142,14 @@
         {{#with quiz}}
           <h3>{{title}}</h3>
           {{#with preference}}
-            <div class='row'>
-              <label class='form-label'>{{title}}</label>
-              <div class='col-4'>
-                <div class='form-check'>
-                  {{#each options}}
-                    <label class='form-check-label pe-3'>{{this}}</label>
-                    <input type='radio' class='form-check-input' {{#if @first}} checked {{/if}} />
-                  {{/each}}
+            <label class='form-label'>{{title}}</label>
+            <div class='form-check'>
+              {{#each options}}
+                <div>
+                  <label class='form-check-label pe-3'>{{this}}</label>
+                  <input type='radio' class='form-check-input' {{#if @first}} checked {{/if}} />
                 </div>
-              </div>
+              {{/each}}
             </div>
           {{/with}}
           {{#with your_expirience}}
@@ -168,16 +166,14 @@
             </select>
           {{/with}}
           {{#with factors}}
-            <div class='row'>
-              <label class='form-label mt-2 mb-1'>{{title}}</label>
-              <div class='col-5'>
-                <div class='form-check'>
-                  {{#each options}}
-                    <label class='form-check-label'>{{this}}</label>
-                    <input type='checkbox' class='form-check-input' {{#if @first}} checked {{/if}} />
-                  {{/each}}
+            <label class='form-label mt-2 mb-1'>{{title}}</label>
+            <div class='form-check'>
+              {{#each options}}
+                <div>
+                  <label class='form-check-label'>{{this}}</label>
+                  <input type='checkbox' class='form-check-input' {{#if @first}} checked {{/if}} />
                 </div>
-              </div>
+              {{/each}}
             </div>
           {{/with}}
         {{/with}}
@@ -190,22 +186,14 @@
         </div>
         <div class='card mt-2 p-1'>
           {{#with total}}
-            <div class='row'>
-              <div class='card-title mb-0'><h5>{{title}}</h5></div>
-              <div class='col-9'>
-                {{#each item_list}}
-                  {{name}}: {{price}}
-                {{/each}}
-              </div>
-            </div>
+            <div class='card-title mb-0'><h5>{{title}}</h5></div>
+            {{#each item_list}}
+              <div>{{name}}: {{price}}</div>
+            {{/each}}
             <hr class='mt-2 mb-2'>
-            <div class='row'>
-              <div class='col-11'>
-                {{#each additional_info}}
-                  {{text}}: {{value}}
-                {{/each}}
-              </div>
-            </div>
+            {{#each additional_info}}
+              <div>{{text}}: {{value}}</div>
+            {{/each}}
             <hr class='mt-2 mb-2'>
             {{#with total_price}}
               {{text}}: {{value}}
