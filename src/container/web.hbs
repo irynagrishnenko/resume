@@ -1,88 +1,91 @@
-<div>
+<div class='p-4'>
   <main>
     {{#with web}}
       <ol>
-        {{#each languages}}
-          <li>
-            <b><abbr>{{name}}</abbr></b>
-            <hr />
-            ({{version}})
-            <br />
-            <dfn>{{description}}</dfn>
-            <br />
-            {{#if elements}}
-              <h4>Consist of such elements:</h4>
-            {{/if}}
-            <ul>
-              {{#each elements}}
-                <li>
-                  <dfn>{{name}}</dfn>
-                  -
-                  {{description}}
-                  Has 2 attributes:
-                  <ol>
-                    {{#each attributes}}
+        <div class='row'>
+          {{#each languages}}
+            <div class='col-4'>
+              <li>
+                <div class='text-bg-primary'><abbr
+                  >{{name}}</abbr></div>
+                <hr />
+                <div>({{version}})</div>
+                <dfn>{{description}}</dfn>
+                {{#if elements}}
+                  <h4 class='my-3'>Consist of such elements:</h4>
+                {{/if}}
+                <ul>
+                  {{#each elements}}
+                    <li>
+                      <dfn>{{name}}</dfn>
+                      -
+                      {{description}}
+                      Has 2 attributes:
+                      <ol>
+                        {{#each attributes}}
+                          <li>
+                            {{name}}
+                            {{description}}
+                          </li>
+                        {{/each}}
+                      </ol>
+                    </li>
+                    <br />
+                  {{/each}}
+                </ul>
+                <div>
+                  {{#if properties}}
+                    <h4 class='my-3'>Has such properties:</h4>
+                  {{/if}}
+                  <ul>
+                    {{#each properties}}
                       <li>
                         {{name}}
+                        -
                         {{description}}
+                        <ul>
+                          {{#each values}}
+                            <li>
+                              {{value}}
+                              -
+                              {{description}}
+                            </li>
+                          {{/each}}
+                          <br />
+                        </ul>
                       </li>
                     {{/each}}
-                  </ol>
-                </li>
-                <br />
-              {{/each}}
-            </ul>
-            <div>
-              {{#if properties}}
-                <h4>Has such properties:</h4>
-              {{/if}}
-              <ul>
-                {{#each properties}}
-                  <li>
-                    {{name}}
-                    -
-                    {{description}}
-                    <ul>
-                      {{#each values}}
-                        <li>
-                          {{value}}
-                          -
-                          {{description}}
-                        </li>
-                      {{/each}}
-                      <br />
-                    </ul>
-                  </li>
-                {{/each}}
-              </ul>
+                  </ul>
+                </div>
+                <div>
+                  {{#if functions}}
+                    <h4 class='my-3'>Has such functions:</h4>
+                  {{/if}}
+                  <ul>
+                    {{#each functions}}
+                      <li>
+                        {{name}}
+                        -
+                        {{description}}
+                        Include parameters:
+                        <ul>
+                          {{#each parameters}}
+                            <li>
+                              <strong>{{name}}</strong>
+                              ({{type}})
+                              <dfn>{{description}}</dfn>
+                            </li>
+                          {{/each}}
+                          <br />
+                        </ul>
+                      </li>
+                    {{/each}}
+                  </ul>
+                </div>
+              </li>
             </div>
-            <div>
-              {{#if functions}}
-                <h4>Has such functions:</h4>
-              {{/if}}
-              <ul>
-                {{#each functions}}
-                  <li>
-                    {{name}}
-                    -
-                    {{description}}
-                    Include parameters:
-                    <ul>
-                      {{#each parameters}}
-                        <li>
-                          <strong>{{name}}</strong>
-                          ({{type}})
-                          <dfn>{{description}}</dfn>
-                        </li>
-                      {{/each}}
-                      <br />
-                    </ul>
-                  </li>
-                {{/each}}
-              </ul>
-            </div>
-          </li>
-        {{/each}}
+          {{/each}}
+        </div>
       </ol>
     {{/with}}
   </main>

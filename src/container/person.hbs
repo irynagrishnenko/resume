@@ -1,16 +1,14 @@
-<div>
+<div class="p-4">
   {{#with person}}
     <main>
-      <h1>Introduction</h1>
-      <div>
+      <h1 class="mb-3 text-center">Introduction</h1>
+      <div class="mb-2">
         <strong>{{name}}</strong>
         ({{age}})
       </div>
-      <br />
-      <div>
+      <div class="mb-2">
         {{gender}}
       </div>
-      <br />
       <div>
         {{#with address}}
           <address>{{country}},
@@ -20,8 +18,8 @@
             {{street}}</address>
         {{/with}}
       </div>
-      <hr />
-      <section>
+      <hr class="my-4" />
+      <section class="mb-5">
         {{> title data='Education'}}
         <ul>
           {{#each education}}
@@ -34,8 +32,26 @@
           {{/each}}
         </ul>
       </section>
-      <br>
       <section>
+        <div class="mb-5">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="/person">Work Experience</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="/person">Employees</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="/person">Projects</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="/person">Teams</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="/person">Projects</a>
+            </li>
+          </ol>
+        </div>
         {{> title data='Work Experience'}}
           {{#each workExperience}}
             <ol>
@@ -46,7 +62,7 @@
                 <div>{{startDate}}</div>
                 <div>{{endDate}}</div>
                 <div>
-                  <h4>Responsibilities</h4>
+                  <h4 class="my-3">Responsibilities</h4>
                   <ul>
                     {{#each responsibilities}} 
                      <li>{{this}}</li> 
@@ -54,35 +70,31 @@
                   </ul>
                 </div>
                 <div>
-                  <h4>Employees</h4>
+                  <h4 class="my-3">Employees</h4>
                   <ul>{{#each employees}}
                     <li>
-                      {{name}}
-                      <br>
-                      {{position}}
-                      <br>
-                      {{department}}
+                      <div>{{name}}</div>
+                      <div>{{position}}</div>
+                      <div>{{department}}</div>
                       <div>
-                        <h4>Projects</h4>
+                        <h4 class="my-3">Projects</h4>
                         <ul>
                           {{#each projects}} 
                           <li>
-                            {{name}}
-                            <br>
-                            {{description}} ({{status}})
-                            <br>
-                            <h4>Teams</h4>
+                            <div>{{name}}</div>
+                            <div>{{description}} ({{status}})</div>
+                            <h4 class="my-3">Teams</h4>
                             <ol>
                               {{#each teams}}
                               <li>
-                                {{team_name}}
-                                <br>
-                                {{#with team_leader}}
-                                  {{title}},
-                                  {{name}}                                
-                                  {{> link href='john.smith@example.com' text='john.smith@example.com' noLine=true}}
-                                {{/with}}
-                                <br>
+                                <div>{{team_name}}</div>
+                                <div>
+                                  {{#with team_leader}}
+                                    {{title}},
+                                    {{name}}                                
+                                    {{> link href='john.smith@example.com' text='john.smith@example.com' noLine=true}}
+                                  {{/with}}
+                                </div>
                                 <ul>
                                   {{#each team_members}}
                                     <li>
@@ -90,20 +102,19 @@
                                       {{title}}
                                       ({{skills}})
                                       {{> link href='alice.johnson@example.com' text='alice.johnson@example.com' noLine=true}}
-                                      <h4>Projects</h4>
+                                      <h4 class="my-3">Projects</h4>
                                       <ul>
                                         {{#each projects}}
                                           <li>
-                                            {{name}}
-                                            <br>
-                                            {{description}}
-                                            <br>
-                                            {{technologies}}
-                                            <br>
+                                            <div>{{name}}</div>
+                                            <div>{{description}}</div>
+                                            <div>{{technologies}}</div>
+                                            <div>
                                               {{#each team_members}}
                                                 {{name}}
                                                 ({{title}}),
                                               {{/each}}
+                                            </div>
                                           </li>
                                         {{/each}}
                                       </ul>

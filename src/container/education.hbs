@@ -1,30 +1,34 @@
-<div>
-  {{#with main}}
-    <main>
-        <section>
-            {{> title data="My educations" big=true}}
-            <ul>
+<div class="row">
+  <div class="col-6">
+    {{#with main}}
+      <main>
+          <section>
+              {{> title data="My educations" big=true}}
+              <div class='form-check'>
                 {{#each educations}}
-                    <li>{{name}}
-                      {{#unless isEnd}} (ще в процесі) {{/unless}}
-                    </li>
+                  <div class="mb-2">
+                    <label class='form-check-label'>{{name}}</label>
+                    <input type='checkbox' class='form-check-input' {{#if isEnd}} checked {{/if}} />
+                    {{#unless isEnd}} (ще в процесі) {{/unless}}
+                  </div>
                 {{/each}}
-            </ul>
-        </section>
-    </main>
-  {{/with}}
-</div>
-<div>
-  {{#with main}}
-    <main>
-        <section>
-            {{> title data="My certificates" big=false}}
-            <ul>
-                {{#each certificates}}
-                    <li>{{name}} ({{id}})</li>
-                {{/each}}
-            </ul>
-        </section>
-    </main>
-  {{/with}}
+              </div>
+          </section>
+      </main>
+    {{/with}}
+  </div>
+  <div class="col-6">
+    {{#with main}}
+      <main>
+          <section>
+              {{> title data="My certificates" big=false}}
+              <ul>
+                  {{#each certificates}}
+                      <li>{{name}} ({{id}})</li>
+                  {{/each}}
+              </ul>
+          </section>
+      </main>
+    {{/with}}
+  </div>
 </div>
