@@ -1,7 +1,7 @@
-<div>
+<div class='p-4'>
   <main>
     <section>
-      <h1>{{name}}</h1>
+      <h1 class='mb-5 text-center'>{{name}}</h1>
       <time>{{birthdate}} - {{deathdate}}</time>
       <p>He was born in
         {{birthplace}}
@@ -12,16 +12,18 @@
         <b>He is famous in the world for
           <ul>
             {{#each known_for}}
-              <li>{{this}}</li>
+              <li><span
+                  class='badge text-bg-primary'
+                >{{this}}</span></li>
             {{/each}}
           </ul>
         </b>
       </p>
     </section>
-    <hr />
+    <hr class='my-4' />
     <article>
       <section>
-        <h3>Education</h3>
+        <h3 class='text-center mb-4'>Education</h3>
         {{#each education}}Albert Einstein received his
           degree{{degree}}
           in
@@ -31,10 +33,10 @@
           in
           {{year}}
         {{/each}}
-        <hr />
+        <hr class='my-4' />
       </section>
       <section>
-        <h3>Way of Physik's life</h3>
+        <h3 class='text-center mb-4'>Way of Physik's life</h3>
         <p>He continued to develop in the field and soon
           created notable publications:
           <ol>
@@ -47,16 +49,15 @@
             {{/each}}
           </ol>
         </p>
-        <div>In the same year, he made one of his major
-          discoveries
+        <div class='mb-3'>In the same year, he made one of
+          his major discoveries
           {{#each major_discoveries}}
             <dfn>{{title}}</dfn>
             ({{year}})
             {{description}}
           {{/each}}
         </div>
-        <br />
-        <div>
+        <div class='mb-3'>
           Albert Einstein made invaluable contributions to
           the development of modern physics such as
           {{#with contributions}}
@@ -78,45 +79,48 @@
           {{/each}}
         </p>
       </section>
-      <hr />
+      <hr class='my-4' />
       <section>
-        <h3>Friends</h3>
-        <div>
-          During his life, his best friends and partners
-          were:
-          <ul>
-            {{#each partners}}
-              <li>
-                {{name}}
-                ({{relationship}})
-                {{years}}.
-              </li>
-            {{/each}}
-          </ul>
-        </div>
-        <div>
-          During his lifetime, he was an influential person
-          and therefore influenced such famous people:
-          <ol>
-            {{#each influenced}}
-              <li>{{this}}</li>
-            {{/each}}
-          </ol>
-        </div>
-        <div>
-          At the same time, he was inspired by the works of
-          such great people:
-          <ol>
-            {{#each influences}}
-              <li>{{this}}</li>
-            {{/each}}
-          </ol>
+        <h3 class='text-center mb-4'>Friends</h3>
+        <div class='row'>
+          <div class='col-4'>
+            During his life, his best friends and partners
+            were:
+            <ul>
+              {{#each partners}}
+                <li>
+                  {{name}}
+                  ({{relationship}})
+                  {{years}}.
+                </li>
+              {{/each}}
+            </ul>
+          </div>
+          <div class='col-4'>
+            During his lifetime, he was an influential
+            person and therefore influenced such famous
+            people:
+            <ol>
+              {{#each influenced}}
+                <li>{{this}}</li>
+              {{/each}}
+            </ol>
+          </div>
+          <div class='col-4'>
+            At the same time, he was inspired by the works
+            of such great people:
+            <ol>
+              {{#each influences}}
+                <li>{{this}}</li>
+              {{/each}}
+            </ol>
+          </div>
         </div>
       </section>
-      <hr />
+      <hr class='my-4' />
       <div>
-        Summarizing this article, I would like to end it
-        with quotes great Albert Einstein:
+        <p>Summarizing this article, I would like to end it
+          with quotes great Albert Einstein:</p>
         <ul>
           {{#each quotes}}
             <li><q>{{this}}</q></li>

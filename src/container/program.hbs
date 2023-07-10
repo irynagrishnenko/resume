@@ -1,4 +1,4 @@
-<div>
+<div class="p-4">
   {{#with program}}
     {{#with excursion}}
       <h1>{{name}}</h1>
@@ -7,45 +7,41 @@
             {{country}}</address></h2>
       {{/with}}
       <date>{{date}}</date>
-      <hr>
+      <hr class="my-4">
       <main>
         {{> title data='Information about programs'}}
         <div>
           <ol>
             {{#each program}}
               <li>
-                {{name}}
-                {{type}}
-                ({{duration}}
-                days)
-                <br />
+                <div>{{name}} {{type}} ({{duration}} days)</div>
                 {{#with details}}
                   {{#with museum}}
                     {{name}}
                     {{#with location}}
-                      <address>{{address}}</address>
+                      <address class="mb-0">{{address}}</address>
                       {{city}}
                       {{country}}
                     {{/with}}
-                    <h4>Exhibits</h4>
+                    <h4 class="my-3">Exhibits</h4>
                     <ol>
                       {{#each exhibits}}
                         <li>
-                          <strong>{{name}}</strong>
-                          <br />
-                          <em>{{#if artist}}
+                          <div><strong>{{name}}</strong></div>
+                          <div>
+                            <em>{{#if artist}}
                               {{artist}}
                             {{else}}
                               The author is unknown
                             {{/if}}</em>
-                          <br />
+                          </div>
                           {{description}}
-                          <br />
-                          {{#if audio_guide}}
-                            AUDIO
-                          {{/if}}
+                          <div class="mb-3">
+                            {{#if audio_guide}}
+                              AUDIO
+                            {{/if}}
+                          </div>
                         </li>
-                        <br />
                       {{/each}}
                     </ol>
                   {{/with}}
@@ -53,7 +49,7 @@
                     {{#with venue}}
                       {{name}}
                       {{#with location}}
-                        <address>{{address}}</address>
+                        <address class="mb-0">{{address}}</address>
                         {{city}}
                         {{country}}
                       {{/with}}
@@ -61,7 +57,7 @@
                   </div>
                   <div>
                   {{#if performers}}
-                  <h4>Performers:</h4>
+                  <h4 class="my-3">Performers:</h4>
                     <ul>
                       {{#each performers}}
                         <li>
@@ -80,8 +76,7 @@
                       ({{rating}})
                     {{/with}}
                   </div>
-                  <hr>
-                  <br>
+                  <hr class="my-4">
                 {{/with}}
               </li>
             {{/each}}
